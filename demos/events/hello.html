@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+    />
+    <title></title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+    <div id="root">
+        <h1>{{ hello }}</h1>
+        <button v-on:click="clickHandler">Click me!</button>
+        <button @click="clickHandlerWithParam('123', $event)">Button with a parameter</button>
+    </div>
+
+    <script>
+        var myVue = new Vue({
+            el: "#root",
+            data: {
+                hello: "Hello, Vue world!"
+            },
+            methods: {
+                clickHandler: function (e) {
+                    this.hello = `The button: ${e.target.innerText} was clicked!`;
+                },
+                clickHandler2: (e) => {
+                    myVue.hello = "Click handler #2";
+                },
+                clickHandlerWithParam: function(param, e) {
+                    console.log(param);
+                    console.log(e);
+                }
+            }            
+        });
+    </script>
+</body>
+
+</html>

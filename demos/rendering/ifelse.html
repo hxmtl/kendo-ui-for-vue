@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+    />
+    <title></title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="root">
+        <label>
+            <select v-model="framework">
+                <option value="vue">Vue.js</option>
+                <option value="ng">Angular</option>
+                <option value="react">React</option>
+            </select> Framework
+        </label>
+        <div>
+            <h2 v-if="framework === 'vue'">Vue.js Rocks!</h2>
+            <h2 v-if="framework === 'ng'">Angular Rocks!</h2>
+            <h2 v-if="framework === 'react'">React Rocks!</h2>
+            
+        </div>
+        <label>
+            <input type="checkbox" id="checkbox" v-model="checked"> Show/Hide
+        </label>
+        <h2 v-show="checked">I'm bound to v-show</h2>
+        <h2 v-if="checked">I'm bound to v-if</h2>
+        <h2 v-else>This is something else</h2>
+    </div>
+    <script>
+        var myVue = new Vue({
+            name: "My Vue",
+            el: "#root",
+            data: {
+                framework: "vue",
+                checked: true
+            }
+        });
+    </script>
+</body>
+
+</html>

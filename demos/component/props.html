@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+    />
+    <title></title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+    <div id="root">
+        <input type="text" v-model="parentMessage" />
+        <my-component :message="parentMessage" :age="2"></my-component>
+    </div>
+    <script>
+        const myComponent = Vue.component('my-component', {
+            template: '<h2>{{message}}</h2>',
+            data: function () {
+                return {
+                    counter: 0
+                };
+            },
+            props: //alternative short-syntax is ['message', 'age']
+                {
+                    message: {
+                        type: String
+                    },
+                    age: {
+                        type: Number,
+                        default: 0,
+                        required: true,
+                        validator: function (value) {
+                            return value >= 0
+                        }
+                    }
+                }
+        });
+
+        const myVue = new Vue({
+            el: '#root',
+            data: {
+                parentMessage: "Hello, Vue World!"
+            }
+        });
+
+    </script>
+</body>
+
+</html>

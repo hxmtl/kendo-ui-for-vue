@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title></title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+    <div id="root">
+        <h1 :style="{color:color, fontFamily: fontFamily, textDecoration: 'underline'}">{{hello}}</h1>        
+        <img v-bind:src="myLogo" />
+    </div>
+    <script>
+        var myVue = new Vue({
+            el: "#root",
+            data : {
+                hello: "Hello, Vue world!",
+                myLogo: "/assets/logo.png",
+                color: "skyblue",
+                fontFamily: "Courier New"
+            }
+        });
+    </script>
+</body>
+
+</html>

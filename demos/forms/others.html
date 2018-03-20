@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+    />
+    <title></title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="root">
+        <p>
+            <label>
+                <input type="checkbox" v-model="options" value="required"> Required
+            </label>
+            <br/>
+            <label>
+                <input type="checkbox" v-model="options" value="essential"> Essential
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input type="radio" v-model="gender" value="male">Male
+            </label>
+            <br/>
+            <label>
+                <input type="radio" v-model="gender" value="male">Male
+            </label>
+        </p>
+        <p>
+            <label>
+                <select v-model="framework">
+                    <option value="vue">Vue.js</option>
+                    <option value="ng">Angular</option>
+                    <option value="react">React</option>
+                </select> Framework
+            </label>
+
+        </p>
+    </div>
+    <script>
+        var myVue = new Vue({
+            el: "#root",
+            data: {
+                options: ["essential"],
+                gender: null,
+                framework: "vue"
+            }
+        });
+    </script>
+</body>
+
+</html>

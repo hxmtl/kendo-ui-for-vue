@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+    />
+    <title></title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="root">
+        <ul v-for="iterator of count">
+            <li>
+                <h1>{{iterator}} - {{hello}}</h1>
+            </li>
+        </ul>
+        <!-- Using javascript Object.keys() -->
+        <ul v-for="(value, key, index) of myObject">
+            <li>
+                <h1>{{index}} - {{key}} - {{value}}</h1>
+            </li>
+        </ul>
+        <ul v-for="item of myArray">
+            <li>
+                <h1>{{item.id}} - {{item.name}}</h1>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var myVue = new Vue({
+            name: "My Vue",
+            el: "#root",
+            data: {
+                hello: "Hello, Vue world!",
+                count: 3,
+                myObject: {
+                    name: "John Smith",
+                    age: 35,
+                    job: "developer"
+                },
+                myArray: [
+                    { id: 1, name: "Vladimir" },
+                    { id: 2, name: "Milan" },
+                    { id: 3, name: "Hristo" },
+                    { id: 4, name: "Assen" }
+                ]
+            }
+        });
+    </script>
+</body>
+
+</html>

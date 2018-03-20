@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+    />
+    <title></title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1>{{ hello }}, {{ fname }} {{ lname }}!</h1>
+        <h2 v-once v-text="description"></h2>
+        <h3>{{htmlBlob}}</h3>
+        <h3 v-html="htmlBlob"></h3>
+        <em>This is an expression: {{ 2 + 2 }} </em>
+        <em>{{ 1 ? 'true' : 'false' }} </em>
+    </div>
+    <script>
+        //debugger;
+        var myVue = new Vue({
+            el: "#root",
+            data: {
+                hello: "Hello, Vue world",
+                fname: "John",
+                lname: "Smith",
+                description: "This is a long text that will be bound just once!",
+                htmlBlob: "<a href='/'>Vue.js</a>"
+            }
+        });
+    </script>
+</body>
+
+</html>

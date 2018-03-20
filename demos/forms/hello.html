@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <title></title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <h1>Hello, {{ name }}{{ name ? "!" : "" }}</h1>
+        <h2>Age is: {{number + number}}</h2>
+        <input v-model.trim.lazy="name" placeholder="Enter your name please:">
+        <input type="color" v-model="color">
+        <input type="date" v-model="date">
+        <input type="number" v-model.number="number">
+        <input type="email" v-model="email">
+        <input type="password" v-model="password">
+        <input type="week" v-model="week">
+    </div>
+    <script>
+        var myVue = new Vue({
+            el: "#root",
+            data: {
+                name: "",
+                color: "#ffffff",
+                date: null,
+                email: null,
+                password: null,
+                week: null,
+                number: 0
+            }
+        });
+    </script>
+</body>
+
+</html>
