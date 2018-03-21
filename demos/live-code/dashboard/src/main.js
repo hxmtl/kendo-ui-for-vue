@@ -13,7 +13,6 @@ import { DatePicker, DateinputsInstaller} from '@progress/kendo-dateinputs-vue-w
 import { DropDownList, DropdownsInstaller } from '@progress/kendo-dropdowns-vue-wrapper'
 import { Validator, ValidatorInstaller } from '@progress/kendo-validator-vue-wrapper'
 
-
 //[GridInstaller, ChartInstaller, DataSourceInstaller, InputsInstaller].forEach(installer => Vue.use(installer));
 Vue.use(GridInstaller)
 Vue.use(ChartInstaller)
