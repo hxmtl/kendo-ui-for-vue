@@ -28,9 +28,9 @@
         <label>
             <input type="checkbox" id="checkbox" v-model="checked"> Show/Hide
         </label>
-        <h2 v-show="checked">I'm bound to v-show</h2>
         <h2 v-if="checked">I'm bound to v-if</h2>
         <h2 v-else>This is something else</h2>
+        <h2 v-show="checked">I'm bound to v-show</h2>
     </div>
     <script>
         var myVue = new Vue({

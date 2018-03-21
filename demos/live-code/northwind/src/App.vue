@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
     <kendo-grid ref="kendoGrid1" :dataSource="localDataSource" :sortable='true'>
     </kendo-grid>
   </div>
@@ -9,7 +8,6 @@
 
 <script>
 import Vue from "vue/dist/vue.js";
-import HelloWorld from "./components/HelloWorld.vue";
 import { Grid, GridInstaller } from "@progress/kendo-grid-vue-wrapper";
 
 Vue.use(GridInstaller);
@@ -17,7 +15,6 @@ Vue.use(GridInstaller);
 export default {
   name: "app",
   components: {
-    HelloWorld,
     Grid
   },
   data: function() {
@@ -46,11 +43,6 @@ export default {
         }
       ]
     };
-  },
-  mounted: function() {
-    alert(1);
-    debugger;
-    
   }
 };
 </script>
