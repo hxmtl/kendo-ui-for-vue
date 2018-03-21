@@ -4,31 +4,27 @@
   <kendo-datasource ref="sharedDataSource" :data="localData" :schema-model-fields="schemaModelFields">
   </kendo-datasource>
   <kendo-grid :data-source-ref="'sharedDataSource'" :sortable="true" :filterable="true">
-        <kendo-grid-column field="employee" title="Employee"></kendo-grid-column>
+        <kendo-grid-column field="name" title="Employee"></kendo-grid-column>
         <kendo-grid-column field="sales" title="Sales" type="number" :format="'{0:c}'"></kendo-grid-column>
   </kendo-grid>
   <kendo-chart :title-text="'Employee Sales'"
                :data-source-ref="'sharedDataSource'"
                :series="series"
-               :category-axis-field="'employee'">
+               :category-axis-field="'name'">
   </kendo-chart>
 </div>
 </template>
 
 <script>
+import dataProvider from './../data-provider.js'
+
 export default {
   name: "Dashboard",
   data: function() {
     return {
-      localData: [
-        { employee: "Joe Smith", sales: 2000 },
-        { employee: "Jane Smith", sales: 2250 },
-        { employee: "Will Roberts", sales: 1550 },
-        { employee: "John Hopcroft", sales: 1000 },
-        { employee: "Maggies Simpson", sales: 3120 }
-      ],
+      localData: dataProvider.employees,
       schemaModelFields: {
-        employee: { type: "string", title: "Employee" },
+        name: { type: "string", title: "Employee" },
         sales: { type: "number", title: "Sales" }
       },
       series: [

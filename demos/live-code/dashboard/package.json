@@ -10,6 +10,7 @@
     "@progress/kendo-charts-vue-wrapper": "^2018.1.313",
     "@progress/kendo-datasource-vue-wrapper": "^2018.1.313",
     "@progress/kendo-grid-vue-wrapper": "^2018.1.313",
+    "@progress/kendo-inputs-vue-wrapper": "^2018.1.313",
     "@progress/kendo-theme-default": "^2.49.0",
     "@progress/kendo-ui": "^2018.1.320",
     "vue": "^2.5.13",
