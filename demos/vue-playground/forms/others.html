@@ -23,17 +23,19 @@
         </p>
 
         <p>
-            <!-- Rework to use the data from dropdown -->
             <label>
-                <input type="radio" v-model="gender" value="male">Male
+                <input type="radio" v-model="framework" value="vue">Vue.js
             </label>
             <br/>
             <label>
-                <input type="radio" v-model="gender" value="female">Female
+                <input type="radio" v-model="framework" value="ng">Angular
+            </label>
+            <br/>
+            <label>
+                <input type="radio" v-model="framework" value="react">React
             </label>
         </p>
         <p>
-            <!-- Kendo Dropdown -->
             <label>
                 <select v-model="framework">
                     <option value="vue">Vue.js</option>
