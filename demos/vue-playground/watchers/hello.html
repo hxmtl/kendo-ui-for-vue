@@ -12,9 +12,10 @@
 
 <body>
     <div id="root">
-        <ul v-for="(item, index) of items">
+        <!-- Notice how the object is stringified -->
+        <ul v-for="item of items">
             <li>
-                <h1>{{index}} - {{item}}</h1>
+                <h1>{{item}}</h1>
             </li>
         </ul>
         <h2>Total: {{total}}</h2>
