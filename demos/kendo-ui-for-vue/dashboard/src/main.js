@@ -2,7 +2,7 @@ import Vue from 'vue/dist/vue.js'
 import App from './App.vue'
 import router from './router'
 import '@progress/kendo-ui'
-import '@progress/kendo-theme-default/dist/all.css'
+import '@progress/kendo-theme-default'
 import dataProvider from "./data-provider.js";
 import { Grid, GridInstaller } from '@progress/kendo-grid-vue-wrapper'
 import { Chart, ChartInstaller } from '@progress/kendo-charts-vue-wrapper'
